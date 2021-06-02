@@ -4,12 +4,16 @@ namespace DPRMC\Backstop;
 
 use DPRMC\Backstop\BackstopTraits\HedgeFundProducts;
 use DPRMC\Backstop\BackstopTraits\InitClient;
+use DPRMC\Backstop\BackstopTraits\PrivateEquityProducts;
 use DPRMC\Backstop\BackstopTraits\Products;
 
 class Backstop {
 
 
-   use InitClient, Products, HedgeFundProducts;
+   use InitClient,
+       Products,
+       HedgeFundProducts,
+       PrivateEquityProducts;
 
 
     /**

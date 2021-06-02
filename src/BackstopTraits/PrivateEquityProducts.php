@@ -7,7 +7,7 @@ trait PrivateEquityProducts {
 
     private $uri = 'private-equity-products';
 
-    public function hedge_fund_products() {
+    public function private_equity_products() {
         $response = $this->guzzle->request( 'GET', $this->uri, [
             'debug'   => $this->debug,
             'headers' => $this->defaultHeaders,

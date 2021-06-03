@@ -1,11 +1,12 @@
 <?php
+
 namespace DPRMC\Backstop\BackstopTraits;
+
+use DPRMC\Backstop\ResponseObjects\HedgeFundProduct;
 
 trait HedgeFundProducts {
 
     use Client;
-
-    private $uri = 'hedge-fund-products';
 
     public function hedge_fund_products() {
         $response = $this->guzzle->request( 'GET', 'hedge-fund-products', [
@@ -13,8 +14,18 @@ trait HedgeFundProducts {
             'headers' => $this->defaultHeaders,
         ] );
 
-        var_dump( (string)$response->getBody() );
+        $jsonArray = json_decode( (string)$response->getBody(), TRUE );
 
-        return (string)$response->getBody();
+        $this->included           = $jsonArray[ 'included' ];
+        $this->meta               = $jsonArray[ 'meta' ];
+        $this->totalResourceCount = $jsonArray[ 'meta' ][ 'totalResourceCount' ];
+        $data                     = $jsonArray[ 'data' ];
+        $hedgeFundProducts        = [];
+
+        foreach ( $data as $row ):
+            $hedgeFundProducts[] = new HedgeFundProduct( $row );
+        endforeach;
+
+        return $hedgeFundProducts;
     }
 }

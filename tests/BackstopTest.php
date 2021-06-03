@@ -2,6 +2,9 @@
 
 namespace DPRMC\Backstop\Tests;
 
+use DPRMC\Backstop\BackstopTraits\PrivateEquityProducts;
+use DPRMC\Backstop\ResponseObjects\PrivateEquityProduct;
+use DPRMC\Backstop\ResponseObjects\Product;
 use PHPUnit\Framework\TestCase;
 
 use DPRMC\Backstop\Backstop;
@@ -42,11 +45,35 @@ class BackstopTest extends TestCase {
 
 
     /**
-     * @test
+     *
      */
     public function productsShouldReturn() {
         $products = self::$client->products();
-        print_r($products);
+        $this->assertIsArray($products);
+        $firstProduct = reset($products);
+        $this->assertInstanceOf(Product::class, $firstProduct);
+    }
+
+
+    /**
+     * @TODO
+     */
+    public function privateEquityProducts() {
+        $privateEquityProducts = self::$client->private_equity_products();
+        $this->assertIsArray($privateEquityProducts);
+        $firstProduct = reset($privateEquityProducts);
+        $this->assertInstanceOf(PrivateEquityProduct::class, $firstProduct);
+    }
+
+
+    /**
+     * @test
+     */
+    public function hedgeFundProductsShouldReturn() {
+        $products = self::$client->hedge_fund_products();
+        $this->assertIsArray($products);
+        $firstProduct = reset($products);
+        $this->assertInstanceOf(Product::class, $firstProduct);
     }
 
 

@@ -12,9 +12,9 @@ class Backstop {
 
 
     use InitClient,
-        Products;
-        //HedgeFundProducts,
-        //PrivateEquityProducts;
+        Products,
+        HedgeFundProducts,
+        PrivateEquityProducts;
 
 
     /**

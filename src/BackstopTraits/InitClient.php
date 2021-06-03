@@ -1,11 +1,12 @@
 <?php
+
 namespace DPRMC\Backstop\BackstopTraits;
 
 trait InitClient {
- use Client;
+    use Client;
 
 
-    public function initClient(){
+    public function initClient() {
         $this->guzzle = new \GuzzleHttp\Client( [
                                                     // Base URI is used with relative requests
                                                     'base_uri' => $this->baseURI,

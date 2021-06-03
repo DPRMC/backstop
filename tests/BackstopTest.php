@@ -46,13 +46,14 @@ class BackstopTest extends TestCase {
      */
     public function productsShouldReturn() {
         $products = self::$client->products();
+        print_r($products);
     }
 
 
     /**
      * @test
      */
-    public function hedgeFundProductsShouldReturn() {
-        $products = self::$client->hedge_fund_products();
-    }
+//    public function hedgeFundProductsShouldReturn() {
+//        $products = self::$client->hedge_fund_products();
+//    }
 }

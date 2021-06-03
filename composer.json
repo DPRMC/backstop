@@ -14,7 +14,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "guzzlehttp/guzzle": "^7.3"
+        "guzzlehttp/guzzle": "^7.3",
+        "nesbot/carbon": "^2.48"
     },
     "autoload": {
         "psr-4": {

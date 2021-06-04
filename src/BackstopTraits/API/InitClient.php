@@ -1,6 +1,6 @@
 <?php
 
-namespace DPRMC\Backstop\BackstopTraits;
+namespace DPRMC\Backstop\BackstopTraits\API;
 
 trait InitClient {
     use Client;
@@ -23,7 +23,7 @@ trait InitClient {
         $headers             = array_merge( $this->defaultHeaders, $additionalHeaders );
 
 
-        $response = $this->guzzle->request( 'POST', 'login', [
+        $response = $this->guzzle->request( 'POST', 'api/login', [
             'debug'       => $this->debug,
             'headers'     => $headers,
             'form_params' => [

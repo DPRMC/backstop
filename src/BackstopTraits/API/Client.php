@@ -1,5 +1,5 @@
 <?php
-namespace DPRMC\Backstop\BackstopTraits;
+namespace DPRMC\Backstop\BackstopTraits\API;
 
 trait Client {
 

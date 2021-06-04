@@ -1,6 +1,6 @@
 <?php
 
-namespace DPRMC\Backstop\BackstopTraits;
+namespace DPRMC\Backstop\BackstopTraits\API;
 
 use DPRMC\Backstop\ResponseObjects\Product;
 
@@ -18,7 +18,7 @@ trait Products {
     public $totalResourceCount;
 
     public function products() {
-        $response = $this->guzzle->request( 'GET', 'products', [
+        $response = $this->guzzle->request( 'GET', 'api/products', [
             'debug'   => $this->debug,
             'headers' => $this->defaultHeaders,
         ] );

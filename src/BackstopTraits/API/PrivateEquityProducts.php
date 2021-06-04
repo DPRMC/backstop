@@ -1,5 +1,5 @@
 <?php
-namespace DPRMC\Backstop\BackstopTraits;
+namespace DPRMC\Backstop\BackstopTraits\API;
 
 use DPRMC\Backstop\ResponseObjects\PrivateEquityProduct;
 
@@ -8,7 +8,7 @@ trait PrivateEquityProducts {
     use Client;
 
     public function private_equity_products() {
-        $response = $this->guzzle->request( 'GET', 'private-equity-products', [
+        $response = $this->guzzle->request( 'GET', 'api/private-equity-products', [
             'debug'   => $this->debug,
             'headers' => $this->defaultHeaders,
         ] );

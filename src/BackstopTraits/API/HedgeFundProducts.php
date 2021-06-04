@@ -1,6 +1,6 @@
 <?php
 
-namespace DPRMC\Backstop\BackstopTraits;
+namespace DPRMC\Backstop\BackstopTraits\API;
 
 use DPRMC\Backstop\ResponseObjects\HedgeFundProduct;
 
@@ -9,7 +9,7 @@ trait HedgeFundProducts {
     use Client;
 
     public function hedge_fund_products() {
-        $response = $this->guzzle->request( 'GET', 'hedge-fund-products', [
+        $response = $this->guzzle->request( 'GET', 'api/hedge-fund-products', [
             'debug'   => $this->debug,
             'headers' => $this->defaultHeaders,
         ] );

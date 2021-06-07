@@ -14,6 +14,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^7.3",
         "nesbot/carbon": "^2.48"
     },

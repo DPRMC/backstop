@@ -9,6 +9,7 @@ use DPRMC\Backstop\BackstopTraits\API\People;
 use DPRMC\Backstop\BackstopTraits\API\PrivateEquityProducts;
 use DPRMC\Backstop\BackstopTraits\API\Products;
 use DPRMC\Backstop\BackstopTraits\API\HedgeFundProducts;
+use DPRMC\Backstop\BackstopTraits\API\Reports;
 use DPRMC\Backstop\BackstopTraits\Services\BackstopCrmQueryService_1_0;
 
 class Backstop {
@@ -20,7 +21,7 @@ class Backstop {
         PrivateEquityProducts,
         InterestLevels,
         People,
-        BackstopCrmQueryService_1_0;
+        Reports;
 
 
     /**

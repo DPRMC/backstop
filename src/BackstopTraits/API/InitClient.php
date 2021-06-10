@@ -5,13 +5,13 @@ namespace DPRMC\Backstop\BackstopTraits\API;
 trait InitClient {
     use Client;
 
-
-    public function initClient() {
+    public function initClient(float $timeout = 60) {
         $this->guzzle = new \GuzzleHttp\Client( [
                                                     // Base URI is used with relative requests
                                                     'base_uri' => $this->baseURI,
                                                     // You can set any number of default request options.
-                                                    'timeout'  => 60.0,
+                                                    'timeout'  => $timeout
+                                                    ,
                                                 ] );
 
         $stringToEncode      = ( $this->user . ':' . $this->password );

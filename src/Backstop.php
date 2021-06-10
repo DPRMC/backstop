@@ -10,7 +10,6 @@ use DPRMC\Backstop\BackstopTraits\API\PrivateEquityProducts;
 use DPRMC\Backstop\BackstopTraits\API\Products;
 use DPRMC\Backstop\BackstopTraits\API\HedgeFundProducts;
 use DPRMC\Backstop\BackstopTraits\API\Reports;
-use DPRMC\Backstop\BackstopTraits\Services\BackstopCrmQueryService_1_0;
 
 class Backstop {
 
@@ -29,13 +28,13 @@ class Backstop {
      */
     protected $apiAccessAuthenticationToken;
 
-    public function __construct( string $myCompanySubdomain, string $user, string $password, bool $debug = FALSE ) {
+    public function __construct( string $myCompanySubdomain, string $user, string $password, bool $debug = FALSE, float $timeout = 300 ) {
         $this->baseURI  = 'https://' . $myCompanySubdomain . '.backstopsolutions.com/backstop/';
         $this->user     = $user;
         $this->password = $password;
         $this->debug    = $debug;
 
-        $this->initClient();
+        $this->initClient($timeout);
     }
 
 

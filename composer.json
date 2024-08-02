@@ -1,31 +1,31 @@
 {
-    "name": "dprmc/backstop",
-    "description": "A PHP library that connects to the Backstop Solutions API.",
-    "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Michael Drennen",
-            "email": "michaeldrennen74@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "nesbot/carbon": "^2.48"
-    },
-    "autoload": {
-        "psr-4": {
-            "DPRMC\\Backstop\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-0": {
-            "DPRMC\\Backstop\\Tests": "tests"
-        }
+  "name": "dprmc/backstop",
+  "description": "A PHP library that connects to the Backstop Solutions API.",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^9.0|^10.0|^11.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael Drennen",
+      "email": "michaeldrennen74@gmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.3|^8.0",
+    "nesbot/carbon": "^2.48|^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "DPRMC\\Backstop\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "DPRMC\\Backstop\\Tests": "tests"
+    }
+  }
 }

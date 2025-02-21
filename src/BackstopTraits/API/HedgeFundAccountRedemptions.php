@@ -102,13 +102,7 @@ trait HedgeFundAccountRedemptions {
 
         $redemptions = [];
         foreach ( $jsonArray[ 'data' ] as $row ):
-            try {
-                $redemptions[] = new HedgeFundAccountRedemption( $row );
-            } catch (\Exception $exception){
-                print_r($row);
-                throw $exception;
-            }
-
+            $redemptions[] = new HedgeFundAccountRedemption( $row );
         endforeach;
 
         return $redemptions;

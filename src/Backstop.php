@@ -3,6 +3,7 @@
 namespace DPRMC\Backstop;
 
 
+use DPRMC\Backstop\BackstopTraits\API\HedgeFundAccountRedemptions;
 use DPRMC\Backstop\BackstopTraits\API\InitClient;
 use DPRMC\Backstop\BackstopTraits\API\InterestLevels;
 use DPRMC\Backstop\BackstopTraits\API\People;
@@ -20,7 +21,8 @@ class Backstop {
         PrivateEquityProducts,
         InterestLevels,
         People,
-        Reports;
+        Reports,
+        HedgeFundAccountRedemptions;
 
 
     /**

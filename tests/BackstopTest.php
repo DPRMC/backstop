@@ -171,6 +171,31 @@ class BackstopTest extends TestCase {
 
     }
 
+
+    /**
+     * @test
+     * @group sub
+     */
+    public function hedgeFundAccountSubscriptionShouldReturn() {
+
+        ini_set( 'memory_limit', -1 );
+        $filterField    = 'transactionDate';
+        $filterOperator = 'gt';
+        $filterValue    = '2024-01-01';
+        $sortField      = 'createdTimestamp';
+
+        $subscriptions = self::$client->hedge_fund_subscriptions_by_filter( $filterField,
+                                                                        $filterOperator,
+                                                                        $filterValue,
+                                                                        $sortField);
+
+        print_r($subscriptions);
+
+        $this->assertNotEmpty($subscriptions);
+
+    }
+
+
     /**
      * @test
      */
